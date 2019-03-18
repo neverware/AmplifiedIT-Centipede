@@ -1,0 +1,53 @@
+:Project: Centipede
+:Author: Amplified Labs
+:Email: publishing@amplifiedit.com
+:Date: 11/01/2016
+:Revision: 2
+:License: MIT https://opensource.org/licenses/MIT
+
+= Project: {Project}
+
+Centipede is a free, self-serve* solution supported by Amplified Labs that packages together an inexpensive microcontroller 
+with a step-by-step instruction guide and all the necessary starter code.
+
+With the physical device and a free Arduino Create account, you have the ability to program the device to use your own settings for 
+WiFi and enrollment credentials, and it will enroll a device for you. The device acts exactly if it were a keyboard, executing programmed commands.
+
+== Step 1: Installation
+Please describe the steps to install this project.
+
+For example:
+
+1. Open this file
+2. Edit as you like
+3. Release to the World!
+
+== Step 2: Assemble the circuit
+
+Assemble the circuit following this diagram
+
+image::layout.png[Layout]
+
+== Step 3: Load the code
+
+Upload the code contained in this sketch on to your board
+
+=== Folder structure
+
+....
+ sketch123                => Arduino sketch folder
+  ├── sketch123.ino       => main Arduino file
+  ├── schematics.png      => (optional) an image of the required schematics
+  ├── layout.png          => (optional) an image of the layout
+  └── ReadMe.adoc         => this file
+....
+
+=== License
+This project is released under an MIT License. https://opensource.org/licenses/MIT
+
+=== Contributing
+To contribute to this project please contact Amplified Labs <publishing@amplifiedit.com>
+
+=== Help
+
+For full support, visit http://labs.amplifiedit.com/centipede[Amplified Labs]
