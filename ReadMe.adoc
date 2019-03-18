@@ -1,17 +1,12 @@
-:Project: Centipede
-:Author: Amplified Labs
+:Author: Amplified_Labs
 :Email: publishing@amplifiedit.com
-:Date: 11/01/2016
-:Revision: 2
-:License: MIT https://opensource.org/licenses/MIT
+:Date: 26/05/2017
+:Revision: version#
+:License: Public Domain
 
 = Project: {Project}
 
-Centipede is a free, self-serve* solution supported by Amplified Labs that packages together an inexpensive microcontroller 
-with a step-by-step instruction guide and all the necessary starter code.
-
-With the physical device and a free Arduino Create account, you have the ability to program the device to use your own settings for 
-WiFi and enrollment credentials, and it will enroll a device for you. The device acts exactly if it were a keyboard, executing programmed commands.
+Describe your project
 
 == Step 1: Installation
 Please describe the steps to install this project.
@@ -24,9 +19,7 @@ For example:
 
 == Step 2: Assemble the circuit
 
-Assemble the circuit following this diagram
-
-image::layout.png[Layout]
+Assemble the circuit following the diagram layout.png attached to the sketch
 
 == Step 3: Load the code
 
@@ -43,11 +36,23 @@ Upload the code contained in this sketch on to your board
 ....
 
 === License
-This project is released under an MIT License. https://opensource.org/licenses/MIT
+This project is released under a {License} License.
 
 === Contributing
-To contribute to this project please contact Amplified Labs <publishing@amplifiedit.com>
+To contribute to this project please contact Amplified_Labs <publishing@amplifiedit.com>
+
+=== BOM
+Add the bill of the materials you need for this project.
+
+|===
+| ID | Part name      | Part number | Quantity
+| R1 | 10k Resistor   | 1234-abcd   | 10       
+| L1 | Red LED        | 2345-asdf   | 5        
+| A1 | Arduino Zero   | ABX00066    | 1        
+|===
+
 
 === Help
-
-For full support, visit http://labs.amplifiedit.com/centipede[Amplified Labs]
+This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
