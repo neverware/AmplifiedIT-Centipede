@@ -1,4 +1,4 @@
-/*
+  /*
   Copyright (c) 2018, Amplified IT
   See the full description at http://labs.amplifiedit.com/centipede
 
@@ -21,9 +21,9 @@
 // Use these options to deter mine if you want to disable analytics, skip asset ID, or if you need to slow down the Centipede
 
 #define VERSION_69 0 // Set to 1 if version 69 or above
-#define VERSION_70 0 // Set to 1 if version 70 or above
+#define VERSION_70 1 // Set to 1 if version 70 or above
 #define sendUsageToGoogle 1 // Set to 0 if you want to un-check the box to send usage analytics to Google
-#define skipAssetIdScreen 1 // Set to 0 if you want Centipede to stop at the asset ID and location screen
+#define skipAssetIdScreen 0 // Set to 0 if you want Centipede to stop at the asset ID and location screen
 #define languageIsSelectedOnBoot 1 // Set to 1 if the language box is selected when you first power on the device
 
 /* These are advanced options. The defaults should be fine, but feel free to tweak values below. */
@@ -89,7 +89,7 @@ void loop() {
   if (digitalRead(buttonPin) == 1 ) { // Check for debugging. If not debugging, run the program
     enterEnrollment(); //Press Enrollment combination before connecting to wifi
     wifiConfig(); // Enter the wifi configuration method (written down below)
-    ToS(); // Accept Terms of Service
+   // ToS(); // Accept Terms of Service
     TXLED1; // Toggle the TX on-board LED
     wait(15); // Wait device to download configuration
     while (digitalRead(buttonPin) != 1) {
@@ -176,18 +176,18 @@ void enterEnrollment() {
   wait(1);
 }
 
-void ToS(){
-// Terms of Service screen
-  wait(1);
-  repeatKey(KEY_TAB, 2);
-  if (!sendUsageToGoogle) {
-    Keyboard.write(KEY_ENTER);
-    wait(1);
-  }
-  repeatKey(KEY_TAB, 3);
-  wait(1);
-  Keyboard.write(KEY_ENTER);
-}
+// void ToS(){
+// // Terms of Service screen
+//   wait(1);
+//   repeatKey(KEY_TAB, 2);
+//   if (!sendUsageToGoogle) {
+//     Keyboard.write(KEY_ENTER);
+//     wait(1);
+//   }
+//   repeatKey(KEY_TAB, 3);
+//   wait(1);
+//   Keyboard.write(KEY_ENTER);
+// }
 
 void wifiConfig() {
   // Access the Network option from the system tray (Status Area).
@@ -407,4 +407,4 @@ void setPrescaler() {
 
   // Recopy interrupt register.
   SREG = oldSREG;
-}
+}     
