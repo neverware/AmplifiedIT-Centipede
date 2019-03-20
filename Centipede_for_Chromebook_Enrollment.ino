@@ -1,4 +1,4 @@
-  /*
+/*
   Copyright (c) 2018, Amplified IT
   See the full description at http://labs.amplifiedit.com/centipede
 
@@ -89,7 +89,6 @@ void loop() {
   if (digitalRead(buttonPin) == 1 ) { // Check for debugging. If not debugging, run the program
     enterEnrollment(); //Press Enrollment combination before connecting to wifi
     wifiConfig(); // Enter the wifi configuration method (written down below)
-   // ToS(); // Accept Terms of Service
     TXLED1; // Toggle the TX on-board LED
     wait(15); // Wait device to download configuration
     while (digitalRead(buttonPin) != 1) {
@@ -175,19 +174,6 @@ void enterEnrollment() {
   Keyboard.release(KEY_LEFT_CTRL);
   wait(1);
 }
-
-// void ToS(){
-// // Terms of Service screen
-//   wait(1);
-//   repeatKey(KEY_TAB, 2);
-//   if (!sendUsageToGoogle) {
-//     Keyboard.write(KEY_ENTER);
-//     wait(1);
-//   }
-//   repeatKey(KEY_TAB, 3);
-//   wait(1);
-//   Keyboard.write(KEY_ENTER);
-// }
 
 void wifiConfig() {
   // Access the Network option from the system tray (Status Area).
@@ -407,4 +393,4 @@ void setPrescaler() {
 
   // Recopy interrupt register.
   SREG = oldSREG;
-}     
+}
