@@ -20,9 +20,6 @@
 
 // Use these options to deter mine if you want to disable analytics, skip asset ID, or if you need to slow down the Centipede
 
-#define VERSION_69 0 // Set to 1 if version 69 or above
-#define VERSION_70 0 // Set to 1 if version 70 or above
-#define sendUsageToGoogle 1 // Set to 0 if you want to un-check the box to send usage analytics to Google
 #define skipAssetIdScreen 1 // Set to 0 if you want Centipede to stop at the asset ID and location screen
 #define languageIsSelectedOnBoot 1 // Set to 1 if the language box is selected when you first power on the device
 
@@ -89,7 +86,6 @@ void loop() {
   if (digitalRead(buttonPin) == 1 ) { // Check for debugging. If not debugging, run the program
     enterEnrollment(); //Press Enrollment combination before connecting to wifi
     wifiConfig(); // Enter the wifi configuration method (written down below)
-    ToS(); // Accept Terms of Service
     TXLED1; // Toggle the TX on-board LED
     wait(15); // Wait device to download configuration
     while (digitalRead(buttonPin) != 1) {
@@ -176,19 +172,6 @@ void enterEnrollment() {
   wait(1);
 }
 
-void ToS(){
-// Terms of Service screen
-  wait(1);
-  repeatKey(KEY_TAB, 2);
-  if (!sendUsageToGoogle) {
-    Keyboard.write(KEY_ENTER);
-    wait(1);
-  }
-  repeatKey(KEY_TAB, 3);
-  wait(1);
-  Keyboard.write(KEY_ENTER);
-}
-
 void wifiConfig() {
   // Access the Network option from the system tray (Status Area).
   Keyboard.press(KEY_LEFT_SHIFT);
@@ -198,7 +181,7 @@ void wifiConfig() {
   Keyboard.release(KEY_LEFT_SHIFT);
   wait(2);
   //to select the Network
-  repeatKey(KEY_TAB, 3 + VERSION_70);  // 3 for pre v70, 4 for ver 70 (black menu)  
+  repeatKey(KEY_TAB, 4);  
   wait(1);
   Keyboard.write(KEY_ENTER);
   wait(1);
@@ -239,11 +222,13 @@ void wifiConfig() {
   wait(2);
   Keyboard.write(KEY_ENTER); // Click "Let's Go"
   wait(1);
-  repeatKey(KEY_TAB, 2 + VERSION_70); // 3 for version 70+ (black menu)
+  //Connect to network page (we already have network selected)
+  repeatKey(KEY_TAB, 2);
   // After connecting, enter the enrollment key command to skip checking for update at this point in the process
-  enterEnrollment();
   wait(1);
   Keyboard.write(KEY_ENTER); // Click "Next"
+  enterEnrollment();
+  wait(1);
 }
 
 void skipAssetId() {
@@ -261,23 +246,12 @@ void skipAssetId() {
 
 void setupAdvancedNetworkConfig() {
   //Starting at Security box
-  if (VERSION_69 == 1){
-    repeatKey(KEY_DOWN_ARROW, 3); // Select Security "EAP" (v69);
+    repeatKey(KEY_DOWN_ARROW, 3);
         Keyboard.write(KEY_TAB);
-  }else{
-    //ARROW_DOWN x3 WEP, PSK, EAP
-    repeatKey(KEY_TAB, 2);
-    Keyboard.write(KEY_ENTER);
-    wait(1);
-    //SSID (again);
-    Keyboard.print(wifi_name);
-    Keyboard.write(KEY_TAB);
-    //@EAP Method
-  }
 
   if (eapMethod == "LEAP") {
     // Default is LEAP v69+
-    repeatKey(KEY_DOWN_ARROW, 1 - VERSION_69);
+    repeatKey(KEY_DOWN_ARROW, 0);
     Keyboard.write(KEY_TAB);
     // Identity
     Keyboard.print(identity);
@@ -291,7 +265,7 @@ void setupAdvancedNetworkConfig() {
     Keyboard.write(KEY_ENTER); // Connect;
   } else if (eapMethod == "PEAP") {
     // Select PEAP method
-    repeatKey(KEY_DOWN_ARROW, 2 - VERSION_69);
+    repeatKey(KEY_DOWN_ARROW, 1);
     Keyboard.write(KEY_TAB);
     wait(1);
     // EAP Phase 2 authentication
@@ -317,7 +291,7 @@ void setupAdvancedNetworkConfig() {
     Keyboard.print(anonymousIdentity);
     Keyboard.write(KEY_TAB);
     Keyboard.write(KEY_ENTER); //Save ID and PW
-    repeatKey(KEY_TAB, 1 + VERSION_69); //End on Connect  /v69+
+    repeatKey(KEY_TAB, 2); //End on Connect
   } else if (eapMethod ==  "EAP-TLS") {
     // Select EAP-TLS method
     repeatKey(KEY_DOWN_ARROW, 2);
