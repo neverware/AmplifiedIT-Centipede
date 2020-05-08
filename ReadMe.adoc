@@ -1,58 +1,56 @@
-:Author: Amplified_Labs
-:Email: publishing@amplifiedit.com
-:Date: 26/05/2017
-:Revision: version#
+:Author: Neverware and AmplifiedIT
+:Email: eshimanovich@neverware.com
+:Date: 05/08/2020
+:Revision: CloudReady 80+
 :License: Public Domain
 
-= Project: {Project}
+= Centipede for CloudReady
+A modified version of Centipede's script for enrolling CloudReady devices into managed environments.
 
-Describe your project
+== 1: Configuration
+Change the settings in the top section of the sketch file. Make sure to have the correct ones selected, or else the script won't execute correctly.
 
-== Step 1: Installation
-Please describe the steps to install this project.
+== 2: Load the code
+Load the code onto an arduino that works with the https://www.arduino.cc/reference/en/language/functions/usb/keyboard/[Keyboard library]. The https://labs.amplifiedit.com/centipede/[Centipede Help Page] recommends using the https://www.amazon.com/OSOYOO-ATmega32U4-arduino-Leonardo-ATmega328/dp/B012FOV17O/[Arduino Leonardo or equivalent].
 
-For example:
+https://www.arduino.cc/en/Guide/HomePage[Here is a useful resource for uploading the code into an arduino.]
 
-1. Open this file
-2. Edit as you like
-3. Release to the World!
+== 3: Prepare the CloudReady Machine
+Install CloudReady into the computer by plugging in a usb with the image, and  selecting CloudReady on the boot menu.
+Use the CloudReady Installer manually, hitting "Install CloudReady" then "Erase Hard Drive & Install CloudReady". After roughly twenty minutes, the computer will turn off.
 
-== Step 2: Assemble the circuit
+When you turn on the device manually, you will be greeted with the "Welcome!" page. 
+*Don't click or type anything unless you know what you are doing.*
 
-Assemble the circuit following the diagram layout.png attached to the sketch
+This is a keyboard emulator, so the starting position of the screen selection affects the success of the Centipede script. 
 
-== Step 3: Load the code
+Take note of the starting position of the screen selection. The languages button is set as the default selected item. If it is something else, you will have to change a setting in the script configuration.
 
-Upload the code contained in this sketch on to your board
+
+== 4: Execute the code
+Plug in the programmed arduino to the prepared CloudReady machine and let it do its thing!
+
+There are long pauses between some steps. Typing into the keyboard or using the mouse/trackpad during runtime will affect the success of the script.
+
+== Additional Resources and Support
+https://labs.amplifiedit.com/centipede/[AmplifiedIT Centipede page]
+
 
 === Folder structure
-
 ....
- sketch123                => Arduino sketch folder
-  ├── sketch123.ino       => main Arduino file
-  ├── schematics.png      => (optional) an image of the required schematics
-  ├── layout.png          => (optional) an image of the layout
-  └── ReadMe.adoc         => this file
+ Centipede_for_CloudReady_Endollment                => Arduino sketch folder
+  ├── Centipede_for_CloudReady_Endollment.ino       => main Arduino file
+  └── ReadMe.adoc                                   => this file
 ....
 
 === License
-This project is released under a {License} License.
+This project is released under a Public Domain License.
 
 === Contributing
-To contribute to this project please contact Amplified_Labs <publishing@amplifiedit.com>
-
-=== BOM
-Add the bill of the materials you need for this project.
-
-|===
-| ID | Part name      | Part number | Quantity
-| R1 | 10k Resistor   | 1234-abcd   | 10       
-| L1 | Red LED        | 2345-asdf   | 5        
-| A1 | Arduino Zero   | ABX00066    | 1        
-|===
-
+To contribute to this project please contact Neverware <eshimanovich@neverware.com>
 
 === Help
 This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
 If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
 or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
+
