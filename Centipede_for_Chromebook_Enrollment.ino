@@ -280,7 +280,7 @@ void shutDown() { // Shutdown if not signed in, Sign out if signed in
 
 void setupAdvancedNetworkConfig() {
   //Starting at Security box
-  repeatKey(KEY_DOWN_ARROW, 3); // Select Security "EAP" (v69);
+  repeatKey(KEY_DOWN_ARROW, 3); // Select Security "EAP"
   Keyboard.write(KEY_TAB);
 
   if (eapMethod == "LEAP") {
@@ -303,7 +303,7 @@ void setupAdvancedNetworkConfig() {
     // EAP Phase 2 authentication
     // If phase two authentication is defined, select it
     if (phaseTwoAuthentication) {
-      repeatKey(KEY_DOWN_ARROW, phaseTwoAuthentication); // [0]Automatic, [1]EAP-MD5, [3]MSCHAPv2
+      repeatKey(KEY_DOWN_ARROW, phaseTwoAuthentication); // options here are [0]Automatic, [1]EAP-MD5, [3]MSCHAPv2
     }
     Keyboard.write(KEY_TAB);
     // Server CA Certificate
@@ -351,7 +351,7 @@ void setupAdvancedNetworkConfig() {
 
     // If phase two authentication is defined, select it
     if (phaseTwoAuthentication) {
-      repeatKey(KEY_DOWN_ARROW, phaseTwoAuthentication); //[0,1,2,3,4,5,6] Set to 0 for automatic, 1 for EAP-MD5, 2 for MSCHAP, 3 for MSCHAPv2, 4 for PAP, 5 for CHAP, 6 for GTC;)
+      repeatKey(KEY_DOWN_ARROW, phaseTwoAuthentication); //options here are [0]Automatic, [1]EAP-MD5, [2]MSCHAP, [3]MSCHAPv2, [4]PAP, [5] for CHAP, [6]GTC
     }
     Keyboard.write(KEY_TAB);
 
