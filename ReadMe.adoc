@@ -5,7 +5,7 @@
 :License: Public Domain
 
 = Centipede for CloudReady
-A modified version of Centipede's script for enrolling CloudReady devices into managed environments.
+A modified version of Amplified Lab's script for enrolling CloudReady devices into managed environments.
 
 == 1: Configuration
 Change the settings in the top section of the sketch file. Make sure to have the correct ones selected, or else the script won't execute correctly.
@@ -16,8 +16,7 @@ Load the code onto an arduino that works with the https://www.arduino.cc/referen
 https://www.arduino.cc/en/Guide/HomePage[Here is a useful resource for uploading the code into an arduino.]
 
 == 3: Prepare the CloudReady Machine
-Install CloudReady into the computer by plugging in a usb with the image, and  selecting CloudReady on the boot menu.
-Use the CloudReady Installer manually, hitting "Install CloudReady" then "Erase Hard Drive & Install CloudReady". After roughly twenty minutes, the computer will turn off.
+Install CloudReady using the instructions in our https://guide.neverware.com[Guide] until the machine automatically shuts down, right after installation. 
 
 When you turn on the device manually, you will be greeted with the "Welcome!" page. 
 *Don't click or type anything unless you know what you are doing.*
@@ -44,10 +43,10 @@ https://labs.amplifiedit.com/centipede/[AmplifiedIT Centipede page]
 ....
 
 === License
-This project is released under a Public Domain License.
+This project is released under the https://opensource.org/licenses/MIT[MIT License].
 
 === Contributing
-To contribute to this project please contact Neverware <eshimanovich@neverware.com>
+To contribute to this project please open an issue or pull request.
 
 === Help
 This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
