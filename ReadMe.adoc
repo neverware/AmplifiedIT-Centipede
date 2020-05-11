@@ -31,8 +31,8 @@ https://labs.amplifiedit.com/centipede/[AmplifiedIT Centipede page]
 
 === Folder structure
 ....
- Centipede_for_CloudReady_Endollment                => Arduino sketch folder
-  ├── Centipede_for_CloudReady_Endollment.ino       => main Arduino file
+ Centipede_for_CloudReady_Enrollment                => Arduino sketch folder
+  ├── Centipede_for_CloudReady_Enrollment.ino       => main Arduino file
   └── ReadMe.adoc                                   => this file
 ....
 
