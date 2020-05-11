@@ -1,9 +1,3 @@
-:Author: Neverware and AmplifiedIT
-:Email: eshimanovich@neverware.com
-:Date: 05/08/2020
-:Revision: CloudReady 80+
-:License: Public Domain
-
 = Centipede for CloudReady
 A modified version of Amplified Lab's script for enrolling CloudReady devices into managed environments.
 
