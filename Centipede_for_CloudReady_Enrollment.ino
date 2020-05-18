@@ -6,12 +6,13 @@
 
   Published under an MIT License https://opensource.org/licenses/MIT
 
+  This script was modified for CloudReady versions 80+
+
 */
 
 #include <Keyboard.h>
 
 /* Modify the following definitions to fit your wireless and enrollment credentials. */
-// This script was modified for CloudReady versions 80+
 
 #define wifi_name "---" // Define SSID for your wireless connection.
 #define wifi_pass "---" // Define the password for your wireless connection.
