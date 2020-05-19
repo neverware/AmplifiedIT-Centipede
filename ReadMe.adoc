@@ -1,5 +1,5 @@
 = Centipede for CloudReady
-A modified version of Amplified Lab's script for enrolling CloudReady devices into managed environments.
+A modified version of https://create.arduino.cc/editor/Amplified_Labs/779bb0d9-aa40-4245-b4e9-988adc6d19df/preview[Amplified Lab's script] for enrolling CloudReady devices into managed environments.
 
 == 1: Configuration
 Change the settings in the top section of the sketch file. Make sure to have the correct ones selected, or else the script won't execute correctly.
