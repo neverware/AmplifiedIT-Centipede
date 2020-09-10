@@ -1,6 +1,8 @@
 == Centipede for CloudReady
 A modified version of https://create.arduino.cc/editor/Amplified_Labs/779bb0d9-aa40-4245-b4e9-988adc6d19df/preview[Amplified Lab's script] for enrolling CloudReady devices into managed environments.
 
+Disclaimer: Not all versions of CloudReady work with this script. Check out out the https://github.com/neverware/AmplifiedIT-Centipede/tags[Tags] page to select the version of the script that is closest to your version of CloudReady. We do not update this script for every version of CloudReady, so you may need to make modifications if your version is not listed. 
+
 == 1: Configuration
 Change the settings in the top section of the sketch file. Make sure to have the correct ones selected, or else the script won't execute correctly.
 
@@ -17,7 +19,7 @@ When you turn on the device manually, you will be greeted with the "Welcome!" pa
 
 This is a keyboard emulator, so the starting position of the screen selection affects the success of the Centipede script. 
 
-Take note of the starting position of the screen selection. The languages button is set as the default selected item. If it is something else, you will have to change a setting in the script configuration.
+Take note of the starting position of the screen selection post-install. You may have to adjust the `selected_on_boot` setting in the script configuration, if it doesn't match the default.
 
 
 == 4: Execute the code
@@ -31,7 +33,7 @@ https://labs.amplifiedit.com/centipede/[AmplifiedIT Centipede page]
 
 === Folder structure
 ....
- Centipede_for_CloudReady_Enrollment                => Arduino sketch folder
+ AmplifiedIT-Centipede                              => Arduino sketch folder
   ├── Centipede_for_CloudReady_Enrollment.ino       => main Arduino file
   └── ReadMe.adoc                                   => this file
 ....

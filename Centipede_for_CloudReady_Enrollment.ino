@@ -23,7 +23,7 @@
 // Use these options to deter mine if you want to disable analytics, skip asset ID, or if you need to slow down the Centipede
 
 #define shutdown_when_finished 1 //[0,1] Set to 0 if you want Centipede to stop at the asset ID and location screen
-#define selected_on_boot 1 //[0,1,2,3]  Active location when device poweron : 3 - "Let's go", 2 - accessibility, 1 - language (Default), 0 - menu 
+#define selected_on_boot 3 //[0,1,2,3]  Active location when device poweron : 3 - "Let's go", 2 - accessibility, 1 - language (Default), 0 - menu 
 
 /* These are advanced options. The defaults should be fine, but feel free to tweak values below. */
 
@@ -256,10 +256,8 @@ void wifiConfig() {
   repeatKey(KEY_TAB, 3 - selected_on_boot);
   wait(2);
   Keyboard.write(KEY_ENTER); // Click "Let's Go"
-  wait(1);
-  repeatKey(KEY_TAB, 2);
   // After connecting, enter the enrollment key command to skip checking for update at this point in the process
-  wait(1);
+  wait(2);
   Keyboard.write(KEY_ENTER); // Click "Next"
   if (!update_via_guest){
     enterEnrollment();
